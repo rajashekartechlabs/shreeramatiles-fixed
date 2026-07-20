@@ -93,7 +93,7 @@ const products = [
     name: 'Curb Saucer Drain',
     price: '₹170 / Piece',
     description: 'Integrated curb and drainage solution for efficient water management.',
-    image: '/images/curbs.png',
+    image: '/images/curb-drain.png',
   },
 ]
 
