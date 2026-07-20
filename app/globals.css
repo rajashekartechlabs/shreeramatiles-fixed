@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -5,6 +6,18 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --color-charcoal: #202124;
+  --color-charcoal-dark: #131415;
+  --color-terracotta: #B45309;
+  --color-terracotta-light: #D97706;
+  --color-stone-50: #F8F7F5;
+  --color-stone-100: #F0EDEA;
+  --color-stone-200: #E5E0DB;
+  --color-stone-400: #B8AFA8;
+  --color-white: #FFFFFF;
+  --color-gold: #F4D03F;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -154,10 +167,43 @@
 }
 
 @layer base {
+  html {
+    @apply bg-stone-50;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-stone-50 text-charcoal font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+
+  h1 {
+    @apply text-5xl lg:text-6xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-4xl lg:text-5xl tracking-tight;
+  }
+
+  h3 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors;
   }
 }

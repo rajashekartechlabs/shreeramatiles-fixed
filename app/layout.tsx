@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Keen Method Concrete - Premium Concrete Solutions',
+  description: 'Premium ready-mix concrete and construction materials for residential, commercial, and industrial projects. High-quality concrete delivery across the region.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -26,11 +26,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'light',
+  themeColor: '#B45309',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -39,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="bg-stone-50">
+      <body className="antialiased bg-stone-50">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
