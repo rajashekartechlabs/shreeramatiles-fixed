@@ -1,103 +1,86 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 const products = [
   {
     id: 1,
-    name: 'Standard Ready-Mix Concrete',
-    description: 'Our most popular grade for general construction. 28-day strength: 30 MPa',
-    applications: 'Foundations, slabs, general structures',
-    price: '₹3,500 - 4,200/m³',
-    specs: ['28-day: 30 MPa', 'Slump: 100-150mm', 'Delivery time: 2-4 hours'],
+    name: 'Drainage Slab',
+    price: '₹80 / Sq.ft',
+    description: 'Heavy-duty drainage slabs for residential and commercial drainage systems.',
   },
   {
     id: 2,
-    name: 'High-Strength Concrete',
-    description: 'Premium grade for demanding applications. 28-day strength: 50 MPa',
-    applications: 'High-rise buildings, bridges, heavy loads',
-    price: '₹4,800 - 5,500/m³',
-    specs: ['28-day: 50 MPa', 'Slump: 75-125mm', 'Delivery time: 2-4 hours'],
+    name: 'Readymade Compound Wall',
+    price: '₹90 / Sq.ft',
+    description: 'Strong precast compound wall panels with quick installation.',
   },
   {
     id: 3,
-    name: 'Self-Consolidating Concrete',
-    description: 'Advanced formulation for complex shapes. Flows without vibration.',
-    applications: 'Intricate designs, confined spaces',
-    price: '₹5,200 - 6,000/m³',
-    specs: ['28-day: 40 MPa', 'Self-flowing', 'Delivery time: 2-4 hours'],
+    name: 'Parking Tile',
+    price: '₹30 / Sq.ft',
+    description: 'Durable concrete parking tiles.',
   },
   {
     id: 4,
-    name: 'Reinforced Concrete',
-    description: 'Pre-designed mix with reinforcement specifications optimized.',
-    applications: 'Beams, columns, slabs with rebar',
-    price: '₹4,000 - 4,800/m³',
-    specs: ['Customizable strength', 'Rebar compatible', 'Delivery time: 2-4 hours'],
+    name: 'I Shape Paver (60 mm)',
+    price: '₹40 / Sq.ft',
+    description: 'Premium I-shaped concrete paver tiles for modern designs.',
   },
   {
     id: 5,
-    name: 'Fiber-Reinforced Concrete',
-    description: 'Enhanced durability with synthetic fiber reinforcement.',
-    applications: 'Roads, industrial floors, waterfront structures',
-    price: '₹5,000 - 5,800/m³',
-    specs: ['Enhanced durability', 'Fiber reinforced', 'Delivery time: 2-4 hours'],
+    name: 'Zig Zag Paver (60 mm)',
+    price: '₹40 / Sq.ft',
+    description: 'Decorative zig zag paver tiles for attractive patterns.',
   },
   {
     id: 6,
-    name: 'Air-Entrained Concrete',
-    description: 'Improved freeze-thaw resistance for harsh climates.',
-    applications: 'Outdoor structures, cold weather regions',
-    price: '₹4,200 - 4,900/m³',
-    specs: ['Freeze-thaw resistant', 'Air-entrained', 'Delivery time: 2-4 hours'],
+    name: 'Zig Zag Paver (80 mm)',
+    price: '₹50 / Sq.ft',
+    description: 'Heavy-duty zig zag paver tiles with enhanced thickness.',
   },
   {
     id: 7,
-    name: 'Lightweight Concrete',
-    description: 'Reduced density for weight-sensitive applications.',
-    applications: 'Roofing, lightweight structural elements',
-    price: '₹5,500 - 6,300/m³',
-    specs: ['Lightweight', '28-day: 20 MPa', 'Delivery time: 2-4 hours'],
+    name: 'Square Paver (8×8, 60 mm)',
+    price: '₹45 / Sq.ft',
+    description: 'Classic square paver tiles for versatile applications.',
   },
   {
     id: 8,
-    name: 'Permeable Concrete',
-    description: 'Eco-friendly drainage solution for sustainable construction.',
-    applications: 'Parking lots, driveways, green infrastructure',
-    price: '₹4,600 - 5,400/m³',
-    specs: ['Water permeable', 'Eco-friendly', 'Delivery time: 2-4 hours'],
+    name: 'Rectangle Paver (4×8, 60 mm)',
+    price: '₹48 / Sq.ft',
+    description: 'Rectangular paver tiles for linear designs and driveways.',
   },
   {
     id: 9,
-    name: 'Colored Concrete',
-    description: 'Customizable colors for aesthetic architectural elements.',
-    applications: 'Decorative surfaces, feature walls',
-    price: '₹4,800 - 5,600/m³',
-    specs: ['Custom colors', 'Decorative finish', 'Delivery time: 2-4 hours'],
+    name: 'Grass Paver (60 mm)',
+    price: '₹60 / Sq.ft',
+    description: 'Eco-friendly grass paver tiles for green parking and landscaping.',
   },
   {
     id: 10,
-    name: 'Marine Grade Concrete',
-    description: 'High-durability formulation resistant to saltwater and corrosion.',
-    applications: 'Harbors, coastal structures, marine projects',
-    price: '₹6,000 - 7,000/m³',
-    specs: ['Saltwater resistant', 'High durability', 'Delivery time: 2-4 hours'],
+    name: 'Grass Paver (80 mm)',
+    price: '₹70 / Sq.ft',
+    description: 'Heavy-duty grass paver tiles for high-traffic areas.',
   },
   {
     id: 11,
-    name: 'Rapid-Set Concrete',
-    description: 'Accelerated curing for time-sensitive projects.',
-    applications: 'Emergency repairs, fast-track construction',
-    price: '₹5,800 - 6,800/m³',
-    specs: ['24-hour strength', 'Rapid curing', 'Delivery time: 1-3 hours'],
+    name: 'Cover Block',
+    price: '₹140 / 100 Pieces',
+    description: 'Protective cover blocks for various construction applications.',
   },
   {
     id: 12,
-    name: 'Thermal Mass Concrete',
-    description: 'Enhanced thermal properties for energy-efficient buildings.',
-    applications: 'Green buildings, sustainable construction',
-    price: '₹5,200 - 6,000/m³',
-    specs: ['Thermal mass', 'Energy efficient', 'Delivery time: 2-4 hours'],
+    name: 'Curb',
+    price: '₹170 / Piece',
+    description: 'Precast concrete curb elements for landscaping and boundaries.',
+  },
+  {
+    id: 13,
+    name: 'Curb Saucer Drain',
+    price: '₹170 / Piece',
+    description: 'Integrated curb and drainage solution for efficient water management.',
   },
 ]
 
@@ -122,18 +105,24 @@ export function Products() {
     return () => observer.disconnect()
   }, [])
 
+  const handleWhatsApp = (productName) => {
+    const message = `Hello, I am interested in the ${productName}. Please share your best price.`
+    const encodedMessage = encodeURIComponent(message)
+    window.open(`https://wa.me/919035501568?text=${encodedMessage}`, '_blank')
+  }
+
   return (
     <section id="products" className="py-20 md:py-28 bg-stone-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
-            Our Offerings
+            Our Products
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mt-3 mb-4">
-            Premium Concrete Products
+            Premium Concrete Pavers & Precast Products
           </h2>
           <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-            Each product is engineered for specific applications, guaranteeing optimal performance for your project needs.
+            High-quality concrete products manufactured for residential, commercial and industrial projects.
           </p>
         </div>
 
@@ -142,49 +131,35 @@ export function Products() {
           {products.map((product, idx) => (
             <div
               key={product.id}
-              className={`group bg-white rounded-xl p-8 hover:shadow-lg transition-all duration-500 border border-stone-200 ${
+              className={`group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 border border-stone-200 flex flex-col ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
-              <div className="mb-6">
-                <div className="w-14 h-14 bg-terracotta/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-terracotta/20 transition-colors">
-                  <span className="text-2xl">🏭</span>
+              {/* Product Image */}
+              <div className="relative h-48 bg-gradient-to-br from-terracotta/10 to-stone-100 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-6xl">🏗️</span>
                 </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-charcoal mb-2">{product.name}</h3>
-                <p className="text-stone-600">{product.description}</p>
-              </div>
+                <p className="text-stone-600 text-sm mb-4 flex-grow">{product.description}</p>
+                
+                {/* Price */}
+                <div className="mb-6 pt-4 border-t border-stone-200">
+                  <span className="text-2xl font-bold text-terracotta">{product.price}</span>
+                </div>
 
-              {/* Specs */}
-              <div className="mb-6 pb-6 border-b border-stone-200">
-                <p className="text-sm font-medium text-charcoal mb-3">Specifications:</p>
-                <ul className="space-y-2">
-                  {product.specs.map((spec, i) => (
-                    <li key={i} className="text-sm text-stone-600 flex items-start gap-2">
-                      <span className="text-terracotta mt-1">•</span>
-                      {spec}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Applications */}
-              <p className="text-sm mb-6">
-                <span className="font-medium text-charcoal">Applications: </span>
-                <span className="text-stone-600">{product.applications}</span>
-              </p>
-
-              {/* Price & CTA */}
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-terracotta">{product.price}</span>
-                <a
-                  href={`https://wa.me/?text=Hi, I'm interested in ${product.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-terracotta hover:text-terracotta-light font-semibold text-sm transition-colors"
+                {/* CTA Button */}
+                <button
+                  onClick={() => handleWhatsApp(product.name)}
+                  className="w-full bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-terracotta-light transition-colors text-center"
                 >
-                  Inquire →
-                </a>
+                  GET BEST PRICE
+                </button>
               </div>
             </div>
           ))}
@@ -192,13 +167,26 @@ export function Products() {
 
         {/* CTA Section */}
         <div className="text-center mt-16 pt-12 border-t border-stone-200">
-          <p className="text-stone-600 mb-6">Need a custom formulation?</p>
-          <a
-            href="#contact"
-            className="inline-block bg-terracotta text-white px-8 py-4 rounded-lg font-semibold hover:bg-terracotta-light transition-colors"
-          >
-            Get Expert Consultation
-          </a>
+          <h3 className="text-2xl font-heading font-bold text-charcoal mb-6">
+            Need Bulk Supply?
+          </h3>
+          <p className="text-stone-600 mb-8">Contact us today for factory-direct pricing.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/919035501568"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-terracotta text-white px-8 py-3 rounded-lg font-semibold hover:bg-terracotta-light transition-colors"
+            >
+              WhatsApp
+            </a>
+            <a
+              href="tel:+919035501568"
+              className="border-2 border-terracotta text-terracotta px-8 py-3 rounded-lg font-semibold hover:bg-terracotta/5 transition-colors"
+            >
+              Call Now
+            </a>
+          </div>
         </div>
       </div>
     </section>

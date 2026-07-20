@@ -4,34 +4,34 @@ import { useEffect, useRef, useState } from 'react'
 
 const reasons = [
   {
-    title: 'Quality Assurance',
-    description: 'Every batch undergoes rigorous testing to ensure it meets or exceeds industry standards and customer requirements.',
+    title: 'Factory Direct Pricing',
+    description: 'Buy directly from the manufacturer and enjoy the best prices without middleman markups.',
+    icon: '💳',
+  },
+  {
+    title: 'Premium Quality',
+    description: 'High-quality concrete products manufactured with precision and tested for durability.',
     icon: '✓',
   },
   {
-    title: 'Reliable Delivery',
-    description: 'Strategic warehouse locations and modern fleet ensure on-time delivery, every time. Same-day delivery available.',
+    title: 'Bulk Orders',
+    description: 'We specialize in large-scale supplies for contractors and commercial projects.',
+    icon: '📦',
+  },
+  {
+    title: 'Fast Delivery',
+    description: 'Located in Bengaluru with efficient logistics for prompt delivery across the region.',
     icon: '🚚',
   },
   {
-    title: 'Expert Team',
-    description: 'Our experienced engineers and technical staff are available to consult on project specifications and challenges.',
-    icon: '👨‍💼',
+    title: 'Modern Manufacturing',
+    description: 'State-of-the-art facilities using advanced manufacturing techniques and quality control.',
+    icon: '🏭',
   },
   {
-    title: 'Competitive Pricing',
-    description: 'Premium quality at market-competitive rates. Volume discounts and long-term partnerships available.',
-    icon: '💰',
-  },
-  {
-    title: 'Environmental Commitment',
-    description: 'We employ sustainable manufacturing practices and offer eco-friendly concrete options for green projects.',
-    icon: '🌍',
-  },
-  {
-    title: 'Technical Support',
-    description: 'From design consultation to pouring day, our team is here to ensure project success at every stage.',
-    icon: '💡',
+    title: 'Trusted by Contractors',
+    description: 'Preferred partner for contractors and builders across residential and commercial sectors.',
+    icon: '🤝',
   },
 ]
 
@@ -57,22 +57,22 @@ export function WhyChoose() {
   }, [])
 
   return (
-    <section className="py-20 md:py-28 bg-charcoal text-white" ref={ref}>
+    <section id="why-us" className="py-20 md:py-28 bg-charcoal text-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
-            Our Advantage
+            Why Choose Us
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3 mb-4">
-            Why Choose Keen Method
+            Why Shree Rama Tiles & Pavers
           </h2>
           <p className="text-lg text-stone-200 max-w-2xl mx-auto">
-            Industry-leading expertise, unwavering quality, and commitment to customer success.
+            Premium products at factory-direct prices with exceptional customer service.
           </p>
         </div>
 
         {/* Grid of Reasons */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, idx) => (
             <div
               key={idx}
@@ -88,14 +88,6 @@ export function WhyChoose() {
               <p className="text-stone-300">{reason.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Quote Section */}
-        <div className="bg-gradient-to-r from-terracotta/10 to-transparent border border-terracotta/30 rounded-2xl p-12 text-center">
-          <p className="text-2xl md:text-3xl font-heading italic mb-6">
-            "Building trust, one concrete foundation at a time."
-          </p>
-          <p className="text-stone-300">Keen Method - Your Concrete Partner for 25+ Years</p>
         </div>
       </div>
     </section>

@@ -17,10 +17,9 @@ export function Header() {
   }, [])
 
   const navLinks = [
-    { label: 'About', href: '#about' },
     { label: 'Products', href: '#products' },
-    { label: 'Applications', href: '#applications' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'Why Us', href: '#why-us' },
+    { label: 'Contact', href: '#contact' },
   ]
 
   return (
@@ -38,11 +37,14 @@ export function Header() {
           className="flex items-center gap-2"
         >
           <div className="w-10 h-10 bg-terracotta rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">KM</span>
+            <span className="text-white font-bold text-lg">SR</span>
           </div>
-          <span className="font-heading font-bold text-charcoal hidden sm:inline">
-            Keen Method
-          </span>
+          <div className="hidden sm:flex flex-col">
+            <span className="font-heading font-bold text-charcoal text-sm leading-tight">
+              Shree Rama
+            </span>
+            <span className="text-xs text-stone-600">Tiles & Pavers</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

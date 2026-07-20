@@ -5,24 +5,19 @@ export function Footer() {
 
   const links = {
     Products: [
-      { label: 'Ready-Mix Concrete', href: '#products' },
-      { label: 'Specialty Mixes', href: '#products' },
-      { label: 'Custom Formulations', href: '#contact' },
+      { label: 'Drainage Slabs', href: '#products' },
+      { label: 'Pavers', href: '#products' },
+      { label: 'Compound Walls', href: '#products' },
     ],
     Company: [
-      { label: 'About Us', href: '#about' },
-      { label: 'Our Team', href: '#about' },
-      { label: 'Careers', href: '#' },
+      { label: 'About Us', href: '#' },
+      { label: 'Our Facility', href: '#' },
+      { label: 'Testimonials', href: '#' },
     ],
-    Resources: [
-      { label: 'Technical Specs', href: '#' },
-      { label: 'Case Studies', href: '#gallery' },
-      { label: 'Blog', href: '#' },
-    ],
-    Legal: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
+    Quick: [
       { label: 'Contact', href: '#contact' },
+      { label: 'Get Quote', href: '#contact' },
+      { label: 'WhatsApp', href: 'https://wa.me/919035501568' },
     ],
   }
 
@@ -35,22 +30,26 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-terracotta rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">KM</span>
+                <span className="text-white font-bold">SR</span>
               </div>
-              <span className="font-heading font-bold text-lg">Keen Method</span>
+              <div>
+                <div className="font-heading font-bold text-sm leading-tight">
+                  Shree Rama
+                </div>
+                <div className="text-xs text-stone-400">
+                  Tiles & Pavers
+                </div>
+              </div>
             </div>
-            <p className="text-stone-400 text-sm mb-6">
-              Premium concrete solutions for every project, built on 25+ years of expertise.
+            <p className="text-stone-400 text-sm mb-4">
+              Premium concrete pavers and precast products. Factory-direct manufacturer in Bengaluru.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-stone-400 hover:text-terracotta transition-colors">
-                f
+            <div className="space-y-2">
+              <a href="tel:+919035501568" className="block text-stone-400 hover:text-terracotta text-sm transition-colors">
+                +91 90355 01568
               </a>
-              <a href="#" className="text-stone-400 hover:text-terracotta transition-colors">
-                in
-              </a>
-              <a href="#" className="text-stone-400 hover:text-terracotta transition-colors">
-                tw
+              <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="block text-stone-400 hover:text-terracotta text-sm transition-colors">
+                WhatsApp
               </a>
             </div>
           </div>
@@ -64,6 +63,8 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      target={link.href.startsWith('http') ? '_blank' : undefined}
+                      rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="text-stone-400 hover:text-terracotta transition-colors text-sm"
                     >
                       {link.label}
@@ -78,10 +79,10 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-stone-400 text-sm">
-            &copy; {currentYear} Keen Method Concrete. All rights reserved.
+            &copy; {currentYear} Shree Rama Tiles & Pavers Manufacturers. All rights reserved.
           </p>
           <p className="text-stone-400 text-sm">
-            Building excellence, one foundation at a time.
+            Premium Concrete Products | Bengaluru
           </p>
         </div>
       </div>

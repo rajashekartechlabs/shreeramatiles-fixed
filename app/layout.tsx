@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Keen Method Concrete - Premium Concrete Solutions',
-  description: 'Premium ready-mix concrete and construction materials for residential, commercial, and industrial projects. High-quality concrete delivery across the region.',
+  title: 'Shree Rama Tiles & Pavers - Premium Concrete Pavers & Precast Products',
+  description: 'Factory-direct manufacturer of concrete pavers, drainage slabs, parking tiles, compound walls and precast concrete products in Bengaluru. Premium quality at competitive prices.',
   generator: 'v0.app',
   icons: {
     icon: [
