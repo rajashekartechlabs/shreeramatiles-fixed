@@ -45,7 +45,7 @@ export function Header() {
             className="h-12 w-12 rounded-full object-cover ring-2 ring-terracotta/30"
             priority
           />
-          <span className="hidden max-w-[230px] font-heading text-sm font-bold uppercase leading-tight tracking-wide text-charcoal sm:block">
+          <span className="block max-w-[190px] font-heading text-[10px] font-bold uppercase leading-[1.15] tracking-wide text-charcoal sm:max-w-[230px] sm:text-sm">
             SHREE RAMA TILES AND PAVERS MANUFACTURERS
           </span>
         </Link>
