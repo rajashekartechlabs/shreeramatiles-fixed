@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Clock3, ExternalLink, MapPin, MessageCircle, Phone } from 'lucide-react'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -25,91 +26,77 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-16">
-          <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
+    <section id="contact" className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div className="mb-10 max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-[0.18em] text-terracotta">
             Get in Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mt-3 mb-4">
+          <h2 className="mt-3 mb-3 font-heading text-4xl font-bold tracking-tight text-charcoal md:text-5xl">
             Contact Shree Rama
           </h2>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+          <p className="text-base leading-7 text-stone-600 md:text-lg">
             Get in touch with us for quotes, bulk orders, or to discuss your requirements.
           </p>
         </div>
 
-        <div className="mb-16 grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:gap-10">
-          {/* Contact Info Cards */}
-          <div>
-            <h3 className="text-2xl font-semibold text-charcoal mb-6">Contact Information</h3>
-            
-            {/* Phone Numbers */}
-            <div className="mb-8">
-              <h4 className="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                <span className="text-2xl">📞</span> Phone Numbers
-              </h4>
-              <div className="space-y-2">
-                <a href="tel:+919035501568" className="text-terracotta hover:text-terracotta-light font-semibold">
-                  +91 90355 01568
-                </a>
-                <a href="tel:+917892679116" className="block text-terracotta hover:text-terracotta-light font-semibold">
-                  +91 78926 79116
-                </a>
+        <div className="mb-12 grid items-start gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-10">
+          <div className="space-y-6">
+            <h3 className="font-heading text-2xl font-semibold tracking-tight text-charcoal">Contact Information</h3>
+
+            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
+              <div>
+                <h4 className="mb-2 flex items-center gap-2 font-semibold text-charcoal"><Phone className="h-4 w-4 text-terracotta" /> Phone Numbers</h4>
+                <div className="space-y-1 pl-6">
+                  <a href="tel:+919035501568" className="block font-semibold text-terracotta hover:text-terracotta-light">+91 90355 01568</a>
+                  <a href="tel:+917892679116" className="block font-semibold text-terracotta hover:text-terracotta-light">+91 78926 79116</a>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="mb-2 flex items-center gap-2 font-semibold text-charcoal"><MessageCircle className="h-4 w-4 text-terracotta" /> WhatsApp</h4>
+                <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="pl-6 font-semibold text-terracotta hover:text-terracotta-light">+91 90355 01568</a>
+              </div>
+
+              <div>
+                <h4 className="mb-2 flex items-center gap-2 font-semibold text-charcoal"><MapPin className="h-4 w-4 text-terracotta" /> Address</h4>
+                <address className="pl-6 text-sm leading-6 text-stone-600 not-italic">
+                  Sy No. 35/1,<br />Near Byrapura Village,<br />Arakere Village,<br />Hesaraghatta Hobli,<br />Yelahanka Taluk,<br />Bengaluru,<br />Karnataka – 562157
+                </address>
               </div>
             </div>
 
-            {/* WhatsApp */}
-            <div className="mb-8">
-              <h4 className="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                <span className="text-2xl">💬</span> WhatsApp
-              </h4>
-              <a 
-                href="https://wa.me/919035501568" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-terracotta hover:text-terracotta-light font-semibold"
-              >
-                +91 90355 01568
-              </a>
+            <div className="rounded-xl border border-stone-200 bg-stone-50 p-5">
+              <h4 className="mb-3 flex items-center gap-2 font-semibold text-charcoal"><Clock3 className="h-4 w-4 text-terracotta" /> Business Hours</h4>
+              <div className="space-y-1 pl-6 text-sm leading-6 text-stone-600">
+                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                <p><strong>Saturday:</strong> 10:00 AM - 3:00 PM</p>
+                <p><strong>Sunday:</strong> Closed</p>
+              </div>
             </div>
 
-            {/* Address */}
-            <div className="mb-8">
-              <h4 className="font-semibold text-charcoal mb-3 flex items-center gap-2">
-                <span className="text-2xl">📍</span> Address
-              </h4>
-              <address className="not-italic text-stone-600 leading-relaxed">
-                Sy No. 35/1,<br />
-                Near Byrapura Village,<br />
-                Arakere Village,<br />
-                Hesaraghatta Hobli,<br />
-                Yelahanka Taluk,<br />
-                Bengaluru,<br />
-                Karnataka – 562157
-              </address>
-            </div>
-
-            {/* Business Hours */}
-            <div className="bg-stone-50 rounded-xl p-6 border border-stone-200">
-              <h4 className="font-semibold text-charcoal mb-3">Business Hours</h4>
-              <p className="text-stone-600 text-sm mb-2"><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
-              <p className="text-stone-600 text-sm mb-2"><strong>Saturday:</strong> 10:00 AM - 3:00 PM</p>
-              <p className="text-stone-600 text-sm"><strong>Sunday:</strong> Closed</p>
+            <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+              <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg bg-terracotta px-5 py-3 font-semibold text-white transition-colors hover:bg-terracotta-light"><MessageCircle className="h-4 w-4" /> WhatsApp Us</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-terracotta px-5 py-3 font-semibold text-terracotta transition-colors hover:bg-terracotta/5"><ExternalLink className="h-4 w-4" /> Get Directions</a>
             </div>
           </div>
 
-          {/* Google Maps */}
-          <div className="bg-stone-100 rounded-xl overflow-hidden h-96 border border-stone-200">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7846647689945!2d77.41842742346914!3d13.196836513202928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1827d8b8b8b9%3A0x1d8b8b8b8b8b8b8b!2sArakere%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <div className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 shadow-sm">
+            <div className="h-[280px] md:h-[320px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7846647689945!2d77.41842742346914!3d13.196836513202928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1827d8b8b8b9%3A0x1d8b8b8b8b8b8b8b!2sArakere%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="flex items-center justify-between gap-4 border-t border-stone-200 bg-white px-5 py-4">
+              <div><p className="font-semibold text-charcoal">Arakere, Bengaluru</p><p className="text-sm text-stone-500">Visit our manufacturing facility</p></div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="shrink-0 text-sm font-semibold text-terracotta hover:text-terracotta-light">Open in Maps</a>
+            </div>
           </div>
         </div>
 
