@@ -13,7 +13,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
       <div className="absolute inset-0">
         <picture className="block h-full w-full">
-          <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" />
+          <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
           <img
             src="/images/hero-desktop.webp"
             alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
