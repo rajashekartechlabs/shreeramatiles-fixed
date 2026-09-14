@@ -11,27 +11,27 @@ const reasons = [
   {
     title: 'Premium Quality',
     description: 'High-quality concrete products manufactured with precision and tested for durability.',
-    icon: '✓',
+    icon: '02',
   },
   {
     title: 'Bulk Orders',
     description: 'We specialize in large-scale supplies for contractors and commercial projects.',
-    icon: '02',
+    icon: '03',
   },
   {
     title: 'Fast Delivery',
     description: 'Located in Bengaluru with efficient logistics for prompt delivery across the region.',
-    icon: '03',
+    icon: '04',
   },
   {
     title: 'Modern Manufacturing',
     description: 'State-of-the-art facilities using advanced manufacturing techniques and quality control.',
-    icon: '04',
+    icon: '05',
   },
   {
     title: 'Trusted by Contractors',
     description: 'Preferred partner for contractors and builders across residential and commercial sectors.',
-    icon: '05',
+    icon: '06',
   },
 ]
 
@@ -60,13 +60,13 @@ export function WhyChoose() {
     <section id="why-us" className="bg-charcoal py-24 text-white md:py-32" ref={ref}>
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="mb-14 max-w-3xl">
-          <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-terracotta-light">
             Why Choose Us
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3 mb-4">
+          <h2 className="mt-3 mb-4 max-w-2xl text-balance font-heading text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
             Why Shree Rama Tiles & Pavers
           </h2>
-          <p className="text-lg text-stone-200 max-w-2xl mx-auto">
+          <p className="max-w-2xl text-pretty text-base leading-7 text-stone-300 md:text-lg">
             Premium products at factory-direct prices with exceptional customer service.
           </p>
         </div>
@@ -82,10 +82,10 @@ export function WhyChoose() {
               style={{ transitionDelay: `${idx * 75}ms` }}
             >
               <div className="mb-8 flex h-11 w-11 items-center justify-center border border-terracotta/60 text-sm font-semibold tracking-widest text-terracotta-light">
-                <span className="text-2xl">{reason.icon}</span>
+                <span className="font-mono text-sm font-medium tracking-[0.14em]">{reason.icon}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{reason.title}</h3>
-              <p className="text-stone-300">{reason.description}</p>
+              <h3 className="mb-3 font-heading text-lg font-semibold leading-snug tracking-tight text-white md:text-xl">{reason.title}</h3>
+              <p className="text-sm leading-6 text-stone-300 md:text-base">{reason.description}</p>
             </div>
           ))}
         </div>
