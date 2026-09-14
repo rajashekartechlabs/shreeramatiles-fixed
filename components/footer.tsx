@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -28,16 +30,17 @@ export function Footer() {
         <div className="grid md:grid-cols-5 gap-8 mb-12 pb-12 border-b border-stone-700">
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-terracotta rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">SR</span>
-              </div>
-              <div>
-                <div className="font-heading font-bold text-sm leading-tight">
-                  Shree Rama
-                </div>
-                <div className="text-xs text-stone-400">
-                  Tiles & Pavers
+            <div className="mb-5 flex items-center gap-3">
+              <Image
+                src="/images/shree-rama-logo.png"
+                alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
+                width={56}
+                height={56}
+                className="h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-terracotta/40"
+              />
+              <div className="max-w-[250px]">
+                <div className="font-heading text-sm font-bold uppercase leading-tight tracking-wide text-white">
+                  SHREE RAMA TILES AND PAVERS MANUFACTURERS
                 </div>
               </div>
             </div>
@@ -79,7 +82,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-stone-400 text-sm">
-            &copy; {currentYear} Shree Rama Tiles & Pavers Manufacturers. All rights reserved.
+            &copy; {currentYear} SHREE RAMA TILES AND PAVERS MANUFACTURERS. All rights reserved.
           </p>
           <p className="text-stone-400 text-sm">
             Premium Concrete Products | Bengaluru
