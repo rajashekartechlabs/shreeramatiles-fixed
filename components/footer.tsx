@@ -22,8 +22,8 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-charcoal text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-charcoal-dark pb-8 pt-20 text-white">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         {/* Main Footer Grid */}
         <div className="grid md:grid-cols-5 gap-8 mb-12 pb-12 border-b border-stone-700">
           {/* Brand Column */}
