@@ -9,9 +9,9 @@ const highlights = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
-      <div className="absolute inset-0">
+    <section className="relative isolate min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
+      <div className="absolute inset-0 z-0 h-full w-full">
         <picture className="block h-full w-full">
           <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
           <img
@@ -23,10 +23,10 @@ export function Hero() {
           />
         </picture>
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-charcoal-dark/70 blur-2xl md:hidden" aria-hidden="true" />
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
+      <div className="absolute inset-x-0 bottom-0 z-10 h-44 bg-charcoal-dark/70 blur-2xl md:hidden" aria-hidden="true" />
 
-      <div className="relative flex min-h-[620px] w-full items-center px-5 py-10 sm:px-8 sm:py-16 lg:px-16 xl:px-24">
+      <div className="relative z-20 flex min-h-[620px] w-full items-center px-5 py-10 sm:px-8 sm:py-16 lg:px-16 xl:px-24">
         <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
           <div className="mb-6 inline-flex rounded-full border border-terracotta-light bg-terracotta px-4 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(224,120,67,0.28)]">
             Factory Direct Manufacturer
