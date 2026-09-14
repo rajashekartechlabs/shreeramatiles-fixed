@@ -2,57 +2,59 @@
 
 import Image from 'next/image'
 
+const highlights = [
+  { mark: '▦', label: 'Direct', detail: 'Manufacturing' },
+  { mark: '◇', label: 'Consistent', detail: 'Quality' },
+  { mark: '▱', label: 'On-Time', detail: 'Supply' },
+  { mark: '⌁', label: 'Sustainable', detail: '& Durable' },
+]
+
 export function Hero() {
   return (
-    <section className="min-h-screen bg-charcoal text-white pt-24 md:pt-0 flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 md:py-0">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            <div>
-              <div className="inline-block mb-4 px-4 py-2 bg-terracotta/20 rounded-full">
-                <span className="text-terracotta text-sm font-semibold">Factory Direct Manufacturer</span>
-              </div>
-              <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight mb-4">
-                Premium Concrete Pavers & Precast Solutions
-              </h1>
-              <p className="text-lg text-stone-200 max-w-lg">
-                Factory-direct manufacturer of concrete pavers, drainage slabs, parking tiles, compound walls and precast concrete products in Bengaluru.
-              </p>
-            </div>
+    <section className="relative min-h-[760px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,20,21,0.98)_0%,rgba(19,20,21,0.94)_42%,rgba(19,20,21,0.42)_70%,rgba(19,20,21,0.15)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
+      <div className="absolute bottom-0 right-0 top-16 h-[calc(100%-4rem)] w-full md:w-[56%]">
+        <Image
+          src="/images/hero-products.jpeg"
+          alt="Concrete pavers and precast drainage products at a manufacturing yard"
+          fill
+          className="scale-[1.8] object-cover object-right-bottom"
+          priority
+        />
+      </div>
+      <div className="absolute inset-y-0 left-[44%] hidden w-24 -skew-x-12 bg-terracotta/35 md:block" />
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a
-                href="https://wa.me/919035501568"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-terracotta text-white px-8 py-4 rounded-lg font-semibold hover:bg-terracotta-light transition-colors text-center"
-              >
-                Get Quote
-              </a>
-              <a
-                href="tel:+919035501568"
-                className="border-2 border-stone-400 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/5 transition-colors text-center"
-              >
-                Call Now
-              </a>
-            </div>
-
-
+      <div className="relative mx-auto flex min-h-[636px] max-w-7xl items-center px-6 py-16 sm:px-8 lg:px-12">
+        <div className="max-w-xl">
+          <div className="mb-7 inline-flex rounded-full border border-terracotta/50 bg-terracotta/15 px-4 py-2 text-sm font-medium text-terracotta-light">
+            Factory Direct Manufacturer
           </div>
-
-          {/* Right Visual */}
-          <div className="relative h-96 md:h-full rounded-xl overflow-hidden hidden md:block shadow-2xl">
-            <Image
-              src="/images/hero-construction.png"
-              alt="Modern construction site with concrete being poured"
-              fill
-              className="object-cover"
-              priority
-            />
+          <h1 className="max-w-2xl text-balance text-5xl font-bold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+            Premium Concrete Pavers &amp; Precast Solutions
+          </h1>
+          <p className="mt-7 max-w-lg text-pretty text-base leading-7 text-stone-200 sm:text-lg">
+            Factory-direct manufacturer of concrete pavers, drainage slabs, parking tiles, compound walls and precast concrete products in Bengaluru.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-terracotta px-8 py-4 text-center font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-terracotta-light">
+              Get Quote
+            </a>
+            <a href="tel:+919035501568" className="rounded-lg border border-stone-400 px-8 py-4 text-center font-semibold text-white transition-colors hover:bg-white/10">
+              Call Now
+            </a>
+          </div>
+          <div className="mt-16 grid max-w-lg grid-cols-2 gap-y-7 sm:grid-cols-4 sm:gap-x-5 sm:gap-y-0">
+            {highlights.map((item, index) => (
+              <div key={item.label} className={`flex items-start gap-3 sm:border-stone-500/60 sm:pl-4 ${index > 0 ? 'sm:border-l' : ''}`}>
+                <span aria-hidden="true" className="pt-0.5 text-2xl text-terracotta-light">{item.mark}</span>
+                <span className="text-sm leading-5 text-stone-200"><strong className="block font-medium text-white">{item.label}</strong>{item.detail}</span>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
+      <div className="absolute right-8 top-28 hidden items-center gap-4 text-[10px] font-medium uppercase tracking-[0.35em] text-stone-300 md:flex lg:right-16">
+        <span>Built for a stronger tomorrow</span><span className="h-px w-16 bg-terracotta-light" />
       </div>
     </section>
   )
