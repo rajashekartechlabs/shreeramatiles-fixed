@@ -9,7 +9,7 @@ const products = [
     name: 'Drainage Slab',
     price: '₹80 / Sq.ft',
     description: 'Heavy-duty drainage slabs for residential and commercial drainage systems.',
-    image: '/images/drainage-slabs.png',
+    image: '/images/drainage-slabs.avif',
     imageClassName: 'object-contain p-3',
   },
   {
@@ -47,21 +47,21 @@ const products = [
     name: 'Zig Zag Paver (80 mm)',
     price: '₹50 / Sq.ft',
     description: 'Heavy-duty zig zag paver tiles with enhanced thickness.',
-    image: '/images/zigzag-paver.png',
+    image: '/images/zigzag-paver-80.png',
   },
   {
     id: 7,
     name: 'Square Paver (8×8, 60 mm)',
     price: '₹45 / Sq.ft',
     description: 'Classic square paver tiles for versatile applications.',
-    image: '/images/square-paver.png',
+    image: '/images/square-paver.avif',
   },
   {
     id: 8,
     name: 'Rectangle Paver (4×8, 60 mm)',
     price: '₹48 / Sq.ft',
     description: 'Rectangular paver tiles for linear designs and driveways.',
-    image: '/images/rectangle-paver.png',
+    image: '/images/rectangle-paver.avif',
   },
   {
     id: 9,
