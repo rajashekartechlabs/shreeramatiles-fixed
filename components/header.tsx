@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Header() {
@@ -27,24 +28,26 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isSticky
           ? 'bg-white shadow-md py-3'
-          : 'bg-stone-50 py-6'
+          : 'bg-white py-4'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <nav className="flex w-full items-center justify-between px-6 sm:px-8 lg:px-16 xl:px-24">
         {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-2"
         >
-          <div className="w-10 h-10 bg-terracotta rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">SR</span>
-          </div>
-          <div className="hidden sm:flex flex-col">
-            <span className="font-heading font-bold text-charcoal text-sm leading-tight">
-              Shree Rama
-            </span>
-            <span className="text-xs text-stone-600">Tiles & Pavers</span>
-          </div>
+          <Image
+            src="/images/shree-rama-logo.png"
+            alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
+            width={52}
+            height={52}
+            className="h-12 w-12 rounded-full object-cover ring-2 ring-terracotta/30"
+            priority
+          />
+          <span className="hidden max-w-[230px] font-heading text-sm font-bold uppercase leading-tight tracking-wide text-charcoal sm:block">
+            SHREE RAMA TILES AND PAVERS MANUFACTURERS
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

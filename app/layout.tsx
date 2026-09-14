@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Shree Rama Tiles & Pavers - Premium Concrete Pavers & Precast Products',
+  title: 'SHREE RAMA TILES AND PAVERS MANUFACTURERS - Premium Concrete Products',
   description: 'Factory-direct manufacturer of concrete pavers, drainage slabs, parking tiles, compound walls and precast concrete products in Bengaluru. Premium quality at competitive prices.',
   generator: 'v0.app',
   icons: {
