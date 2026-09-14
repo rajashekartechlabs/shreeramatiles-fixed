@@ -150,7 +150,7 @@ export function Products() {
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {/* Product Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
+              <div className="relative aspect-[4/3] min-h-[220px] overflow-hidden bg-stone-200 sm:min-h-0">
                 <Image
                   src={product.image}
                   alt={product.name}
