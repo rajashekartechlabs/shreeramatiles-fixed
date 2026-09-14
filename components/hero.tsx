@@ -15,7 +15,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,20,21,0.98)_0%,rgba(19,20,21,0.94)_42%,rgba(19,20,21,0.42)_70%,rgba(19,20,21,0.15)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
       <div className="absolute bottom-0 right-0 top-16 h-[calc(100%-4rem)] w-full md:w-[56%]">
         <Image
-          src="/images/hero-products.jpeg"
+          src="/images/hero-products.png"
           alt="Concrete pavers and precast drainage products at a manufacturing yard"
           fill
           className="scale-[1.8] object-cover object-right-bottom"
