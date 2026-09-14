@@ -31,7 +31,7 @@ export function About() {
           {/* Left Image */}
           <div className="h-96 rounded-2xl overflow-hidden shadow-xl relative">
             <Image
-              src="/images/manufacturing-facility.png"
+              src="/images/manufacturing-facility.webp"
               alt="Keen Method manufacturing facility with modern equipment"
               fill
               className="object-cover"
