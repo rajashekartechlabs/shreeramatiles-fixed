@@ -18,12 +18,13 @@ export function Hero() {
           src="/images/hero-products-extended.webp"
           alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
           fill
-          className="object-cover object-[70%_center] md:object-center"
+          className="object-contain object-top md:object-cover md:object-center"
           sizes="100vw"
           priority
         />
       </div>
-      <div className="absolute inset-0 bg-[rgba(23,21,19,0.34)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-charcoal-dark/70 blur-2xl md:hidden" aria-hidden="true" />
 
       <div className="relative flex min-h-[620px] w-full items-center px-5 py-10 sm:px-8 sm:py-16 lg:px-16 xl:px-24">
         <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
