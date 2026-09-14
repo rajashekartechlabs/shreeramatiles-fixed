@@ -60,9 +60,11 @@ export function Contact() {
 
               <div>
                 <h4 className="mb-2 flex items-center gap-2 font-semibold text-charcoal"><MapPin className="h-4 w-4 text-terracotta" /> Address</h4>
-                <address className="pl-6 text-sm leading-6 text-stone-600 not-italic">
-                  Sy No. 35/1,<br />Near Byrapura Village,<br />Arakere Village,<br />Hesaraghatta Hobli,<br />Yelahanka Taluk,<br />Bengaluru,<br />Karnataka – 562157
-                </address>
+                <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="block pl-6 text-sm leading-6 text-stone-600 transition-colors hover:text-terracotta">
+                  <address className="not-italic">
+                    Sy No. 35/1,<br />Near Byrapura Village,<br />Arakere Village,<br />Hesaraghatta Hobli,<br />Yelahanka Taluk,<br />Bengaluru,<br />Karnataka – 562157
+                  </address>
+                </a>
               </div>
             </div>
 
