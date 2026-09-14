@@ -13,16 +13,16 @@ export function Hero() {
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,20,21,0.98)_0%,rgba(19,20,21,0.94)_42%,rgba(19,20,21,0.42)_70%,rgba(19,20,21,0.15)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
-      <div className="absolute bottom-0 right-0 top-16 h-[calc(100%-4rem)] w-full md:w-[52%]">
+      <div className="absolute inset-0">
         <Image
-          src="/images/hero-products.png"
-          alt="Concrete pavers and precast drainage products at a manufacturing yard"
+          src="/images/hero-products-extended.png"
+          alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
           fill
-          className="scale-[1.8] object-cover object-right-bottom"
+          className="object-cover object-center"
           priority
         />
       </div>
-      <div className="absolute inset-y-0 left-[47%] hidden w-20 -skew-x-12 bg-terracotta/35 md:block" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
 
       <div className="relative flex min-h-[636px] w-full items-center px-6 py-16 sm:px-8 lg:px-16 xl:px-24">
         <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
