@@ -25,8 +25,8 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
             Get in Touch
@@ -39,7 +39,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="mb-16 grid gap-8 md:grid-cols-[0.85fr_1.15fr] md:gap-10">
           {/* Contact Info Cards */}
           <div>
             <h3 className="text-2xl font-semibold text-charcoal mb-6">Contact Information</h3>
@@ -114,7 +114,7 @@ export function Contact() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-stone-50 rounded-2xl p-8 border border-stone-200 md:w-2/3 mx-auto">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-stone-200 bg-stone-50 p-6 md:p-10">
           <h3 className="text-2xl font-semibold text-charcoal mb-6 text-center">Send us an Enquiry</h3>
 
           {submitted ? (

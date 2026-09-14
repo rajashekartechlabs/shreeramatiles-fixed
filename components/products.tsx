@@ -125,37 +125,37 @@ export function Products() {
   }
 
   return (
-    <section id="products" className="py-20 md:py-28 bg-stone-50" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section id="products" className="bg-stone-50 py-24 md:py-32" ref={ref}>
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+        <div className="mb-14 max-w-3xl">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
             Our Products
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mt-3 mb-4">
+          <h2 className="mt-3 mb-4 max-w-2xl text-4xl font-heading font-bold tracking-tight text-charcoal md:text-6xl">
             Premium Concrete Pavers & Precast Products
           </h2>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+          <p className="max-w-2xl text-lg leading-7 text-stone-600">
             High-quality concrete products manufactured for residential, commercial and industrial projects.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product, idx) => (
             <div
               key={product.id}
-              className={`group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 border border-stone-200 flex flex-col ${
+              className={`group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {/* Product Image */}
-              <div className="relative h-48 bg-stone-200 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
@@ -172,7 +172,7 @@ export function Products() {
                 {/* CTA Button */}
                 <button
                   onClick={() => handleWhatsApp(product.name)}
-                  className="w-full bg-terracotta text-white py-3 rounded-lg font-semibold hover:bg-terracotta-light transition-colors text-center"
+                  className="w-full rounded-lg border border-terracotta bg-transparent py-3 text-center font-semibold text-terracotta transition-colors hover:bg-terracotta hover:text-white"
                 >
                   GET BEST PRICE
                 </button>
