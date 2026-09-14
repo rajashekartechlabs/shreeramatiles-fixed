@@ -38,7 +38,7 @@ export function Header() {
           className="flex items-center gap-2"
         >
           <Image
-            src="/images/shree-rama-logo.png"
+            src="/images/shree-rama-logo.webp"
             alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
             width={52}
             height={52}

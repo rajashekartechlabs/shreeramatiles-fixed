@@ -32,7 +32,7 @@ export function Footer() {
           <div>
             <div className="mb-5 flex items-center gap-3">
               <Image
-                src="/images/shree-rama-logo.png"
+                src="/images/shree-rama-logo.webp"
                 alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
                 width={56}
                 height={56}
