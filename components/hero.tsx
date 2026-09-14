@@ -18,7 +18,7 @@ export function Hero() {
           src="/images/hero-products-extended.webp"
           alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
           fill
-          className="object-cover object-[61%_center] md:object-center"
+          className="object-cover object-[70%_center] md:object-center"
           sizes="100vw"
           priority
         />
