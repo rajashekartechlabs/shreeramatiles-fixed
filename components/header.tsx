@@ -31,7 +31,7 @@ export function Header() {
           : 'bg-white py-4'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <nav className="flex w-full items-center justify-between px-6 sm:px-8 lg:px-16 xl:px-24">
         {/* Logo */}
         <Link
           href="/"

@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,20,21,0.98)_0%,rgba(19,20,21,0.94)_42%,rgba(19,20,21,0.42)_70%,rgba(19,20,21,0.15)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
-      <div className="absolute bottom-0 right-0 top-16 h-[calc(100%-4rem)] w-full md:w-[56%]">
+      <div className="absolute bottom-0 right-0 top-16 h-[calc(100%-4rem)] w-full md:w-[52%]">
         <Image
           src="/images/hero-products.png"
           alt="Concrete pavers and precast drainage products at a manufacturing yard"
@@ -22,20 +22,20 @@ export function Hero() {
           priority
         />
       </div>
-      <div className="absolute inset-y-0 left-[44%] hidden w-24 -skew-x-12 bg-terracotta/35 md:block" />
+      <div className="absolute inset-y-0 left-[47%] hidden w-20 -skew-x-12 bg-terracotta/35 md:block" />
 
-      <div className="relative mx-auto flex min-h-[636px] max-w-7xl items-center px-6 py-16 sm:px-8 lg:px-12">
-        <div className="max-w-xl">
-          <div className="mb-7 inline-flex rounded-full border border-terracotta/50 bg-terracotta/15 px-4 py-2 text-sm font-medium text-terracotta-light">
+      <div className="relative flex min-h-[636px] w-full items-center px-6 py-16 sm:px-8 lg:px-16 xl:px-24">
+        <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
+          <div className="mb-6 inline-flex rounded-full border border-terracotta/50 bg-terracotta/15 px-4 py-2 text-sm font-medium text-terracotta-light">
             Factory Direct Manufacturer
           </div>
-          <h1 className="max-w-2xl text-balance text-5xl font-bold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-xl text-balance text-5xl font-bold leading-[1.04] tracking-[-0.04em] text-white sm:text-6xl lg:text-[4.35rem]">
             Premium Concrete Pavers &amp; Precast Solutions
           </h1>
-          <p className="mt-7 max-w-lg text-pretty text-base leading-7 text-stone-200 sm:text-lg">
+          <p className="mt-6 max-w-xl text-pretty text-base leading-7 text-stone-200 sm:text-lg">
             Factory-direct manufacturer of concrete pavers, drainage slabs, parking tiles, compound walls and precast concrete products in Bengaluru.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-terracotta px-8 py-4 text-center font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-terracotta-light">
               Get Quote
             </a>
@@ -43,7 +43,7 @@ export function Hero() {
               Call Now
             </a>
           </div>
-          <div className="mt-16 grid max-w-lg grid-cols-2 gap-y-7 sm:grid-cols-4 sm:gap-x-5 sm:gap-y-0">
+          <div className="mt-12 grid max-w-xl grid-cols-2 gap-y-7 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-0">
             {highlights.map((item, index) => (
               <div key={item.label} className={`flex items-start gap-3 sm:border-stone-500/60 sm:pl-4 ${index > 0 ? 'sm:border-l' : ''}`}>
                 <span aria-hidden="true" className="pt-0.5 text-2xl text-terracotta-light">{item.mark}</span>
