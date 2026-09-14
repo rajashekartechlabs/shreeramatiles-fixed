@@ -10,6 +10,7 @@ const products = [
     price: '₹80 / Sq.ft',
     description: 'Heavy-duty drainage slabs for residential and commercial drainage systems.',
     image: '/images/drainage-slabs.png',
+    imageClassName: 'object-contain p-3',
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const products = [
     price: '₹90 / Sq.ft',
     description: 'Strong precast compound wall panels with quick installation.',
     image: '/images/compound-walls.png',
+    imageClassName: 'object-cover object-center',
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const products = [
     price: '₹30 / Sq.ft',
     description: 'Durable concrete parking tiles.',
     image: '/images/parking-tiles.png',
+    imageClassName: 'object-cover object-center',
   },
   {
     id: 4,
@@ -150,12 +153,12 @@ export function Products() {
               style={{ transitionDelay: `${idx * 50}ms` }}
             >
               {/* Product Image */}
-              <div className="relative aspect-[4/3] min-h-[220px] overflow-hidden bg-stone-200 sm:min-h-0">
+              <div className="relative aspect-[4/3] min-h-[190px] overflow-hidden bg-stone-200 sm:min-h-0">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`${product.imageClassName ?? 'object-cover object-center'} transition-transform duration-700 group-hover:scale-105`}
                 />
               </div>
 
