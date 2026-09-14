@@ -125,7 +125,7 @@ export function Products() {
   }
 
   return (
-    <section id="products" className="bg-stone-50 py-24 md:py-32" ref={ref}>
+    <section id="products" className="bg-stone-50 py-16 md:py-32" ref={ref}>
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="mb-14 max-w-3xl">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">

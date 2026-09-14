@@ -42,7 +42,7 @@ export function Header() {
             alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
             width={52}
             height={52}
-            className="h-12 w-12 rounded-full object-cover ring-2 ring-terracotta/30"
+            className="h-[3.3rem] w-[3.3rem] rounded-full object-cover ring-2 ring-terracotta/30 sm:h-12 sm:w-12"
             priority
           />
           <span className="block max-w-[190px] font-heading text-[10px] font-bold uppercase leading-[1.15] tracking-wide text-charcoal sm:max-w-[230px] sm:text-sm">
