@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Header() {
@@ -36,15 +37,17 @@ export function Header() {
           href="/"
           className="flex items-center gap-2"
         >
-          <div className="w-10 h-10 bg-terracotta rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">SR</span>
-          </div>
-          <div className="hidden sm:flex flex-col">
-            <span className="font-heading font-bold text-charcoal text-sm leading-tight">
-              Shree Rama
-            </span>
-            <span className="text-xs text-stone-600">Tiles & Pavers</span>
-          </div>
+          <Image
+            src="/images/shree-rama-logo.png"
+            alt="SHREE RAMA TILES AND PAVERS MANUFACTURERS logo"
+            width={52}
+            height={52}
+            className="h-12 w-12 rounded-full object-cover ring-2 ring-terracotta/30"
+            priority
+          />
+          <span className="hidden max-w-[230px] font-heading text-sm font-bold uppercase leading-tight tracking-wide text-charcoal sm:block">
+            SHREE RAMA TILES AND PAVERS MANUFACTURERS
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
