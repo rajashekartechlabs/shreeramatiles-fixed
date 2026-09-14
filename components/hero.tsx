@@ -18,16 +18,16 @@ export function Hero() {
           src="/images/hero-products-extended.png"
           alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
           fill
-          className="object-cover object-[68%_center] md:object-center"
+          className="object-cover object-[61%_center] md:object-center"
           sizes="100vw"
           priority
         />
       </div>
-      <div className="absolute inset-0 bg-[rgba(23,21,19,0.42)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
+      <div className="absolute inset-0 bg-[rgba(23,21,19,0.34)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
 
       <div className="relative flex min-h-[620px] w-full items-center px-5 py-10 sm:px-8 sm:py-16 lg:px-16 xl:px-24">
         <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
-          <div className="mb-6 inline-flex rounded-full border border-terracotta/50 bg-terracotta/15 px-4 py-2 text-sm font-medium text-terracotta-light">
+          <div className="mb-6 inline-flex rounded-full border border-terracotta-light bg-terracotta px-4 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(224,120,67,0.28)]">
             Factory Direct Manufacturer
           </div>
           <h1 className="max-w-[32rem] text-balance text-[3.25rem] font-bold leading-[1.02] tracking-[-0.045em] text-white sm:max-w-xl sm:text-6xl lg:text-[4.35rem]">
