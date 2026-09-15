@@ -158,6 +158,7 @@ export function Products() {
                   src={product.image}
                   alt={product.name}
                   fill
+                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                   className={`${product.imageClassName ?? 'object-cover object-center'} transition-transform duration-700 group-hover:scale-105`}
                 />
               </div>

@@ -60,7 +60,7 @@ export function Contact() {
 
               <div>
                 <h4 className="mb-2 flex items-center gap-2 font-semibold text-charcoal"><MapPin className="h-4 w-4 text-terracotta" /> Address</h4>
-                <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="block pl-6 text-sm leading-6 text-stone-600 transition-colors hover:text-terracotta">
+                <a href="https://maps.app.goo.gl/2jkHVXqMAik5rZ5z7?g_st=aw" target="_blank" rel="noopener noreferrer" className="block pl-6 text-sm leading-6 text-stone-600 transition-colors hover:text-terracotta">
                   <address className="not-italic">
                     Sy No. 35/1,<br />Near Byrapura Village,<br />Arakere Village,<br />Hesaraghatta Hobli,<br />Yelahanka Taluk,<br />Bengaluru,<br />Karnataka – 562157
                   </address>
@@ -79,7 +79,7 @@ export function Contact() {
 
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
               <a href="https://wa.me/919035501568" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg bg-terracotta px-5 py-3 font-semibold text-white transition-colors hover:bg-terracotta-light"><MessageCircle className="h-4 w-4" /> WhatsApp Us</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-terracotta px-5 py-3 font-semibold text-terracotta transition-colors hover:bg-terracotta/5"><ExternalLink className="h-4 w-4" /> Get Directions</a>
+              <a href="https://maps.app.goo.gl/2jkHVXqMAik5rZ5z7?g_st=aw" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-lg border border-terracotta px-5 py-3 font-semibold text-terracotta transition-colors hover:bg-terracotta/5"><ExternalLink className="h-4 w-4" /> Get Directions</a>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export function Contact() {
             </div>
             <div className="flex items-center justify-between gap-4 border-t border-stone-200 bg-white px-5 py-4">
               <div><p className="font-semibold text-charcoal">Arakere, Bengaluru</p><p className="text-sm text-stone-500">Visit our manufacturing facility</p></div>
-              <a href="https://www.google.com/maps/search/?api=1&query=Arakere%2C%20Bengaluru" target="_blank" rel="noopener noreferrer" className="shrink-0 text-sm font-semibold text-terracotta hover:text-terracotta-light">Open in Maps</a>
+              <a href="https://maps.app.goo.gl/2jkHVXqMAik5rZ5z7?g_st=aw" target="_blank" rel="noopener noreferrer" className="shrink-0 text-sm font-semibold text-terracotta hover:text-terracotta-light">Open in Maps</a>
             </div>
           </div>
         </div>
