@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 const highlights = [
   { mark: '▦', label: 'Direct', detail: 'Manufacturing' },
   { mark: '◇', label: 'Consistent', detail: 'Quality' },
@@ -9,17 +11,18 @@ const highlights = [
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-screen md:pt-20">
+    <section className="relative isolate min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-[100svh] md:pt-20">
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
       <div className="absolute inset-0 z-0 h-full w-full">
         <picture className="block h-full w-full">
           <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
-          <img
+          <Image
             src="/images/hero-desktop.webp"
             alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
-            className="h-full w-full object-cover object-center"
-            fetchPriority="high"
-            decoding="async"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
         </picture>
       </div>
