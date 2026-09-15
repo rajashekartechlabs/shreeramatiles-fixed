@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useRef, useState } from 'react'
 
 const applications = [
   {
@@ -62,28 +59,8 @@ const applications = [
 ]
 
 export function Applications() {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="applications" className="py-20 md:py-28 bg-white" ref={ref}>
+    <section id="applications" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
@@ -102,10 +79,7 @@ export function Applications() {
           {applications.map((app, idx) => (
             <div
               key={app.id}
-              className={`grid md:grid-cols-2 gap-8 items-center transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${idx * 100}ms` }}
+              className="grid md:grid-cols-2 gap-8 items-center transition-all duration-300"
             >
               {/* Image/Icon - Alternating sides */}
               <div

@@ -1,31 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
 
 export function About() {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="about" className="py-20 md:py-28 bg-white" ref={ref}>
+    <section id="about" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Image */}
@@ -39,11 +18,7 @@ export function About() {
           </div>
 
           {/* Right Content */}
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-            }`}
-          >
+          <div className="transition-all duration-300">
             <div className="mb-6">
               <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
                 About Keen Method

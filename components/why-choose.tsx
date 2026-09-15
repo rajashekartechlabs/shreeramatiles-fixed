@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useRef, useState } from 'react'
 
 const reasons = [
   {
@@ -36,28 +33,8 @@ const reasons = [
 ]
 
 export function WhyChoose() {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section id="why-us" className="bg-charcoal py-24 text-white md:py-32" ref={ref}>
+    <section id="why-us" className="bg-charcoal py-24 text-white md:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="mb-14 max-w-3xl">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-terracotta-light">
@@ -73,13 +50,10 @@ export function WhyChoose() {
 
         {/* Grid of Reasons */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((reason, idx) => (
+          {reasons.map((reason) => (
             <div
-              key={idx}
-              className={`group border border-stone-700/80 bg-white/[0.04] p-7 transition-all duration-500 hover:border-terracotta hover:bg-white/[0.07] ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${idx * 75}ms` }}
+              key={reason.icon}
+              className="group border border-stone-700/80 bg-white/[0.04] p-7 transition-all duration-300 hover:border-terracotta hover:bg-white/[0.07]"
             >
               <div className="mb-8 flex h-11 w-11 items-center justify-center border border-terracotta/60 text-sm font-semibold tracking-widest text-terracotta-light">
                 <span className="font-mono text-sm font-medium tracking-[0.14em]">{reason.icon}</span>

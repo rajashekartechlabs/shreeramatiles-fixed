@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 const products = [
@@ -101,26 +100,6 @@ const products = [
 ]
 
 export function Products() {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   const handleWhatsApp = (productName) => {
     const message = `Hello, I am interested in the ${productName}. Please share your best price.`
     const encodedMessage = encodeURIComponent(message)
@@ -128,7 +107,7 @@ export function Products() {
   }
 
   return (
-    <section id="products" className="bg-stone-50 py-16 md:py-32" ref={ref}>
+    <section id="products" className="bg-stone-50 py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="mb-14 max-w-3xl">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
@@ -144,13 +123,10 @@ export function Products() {
 
         {/* Products Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, idx) => (
+          {products.map((product) => (
             <div
               key={product.id}
-              className={`group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: `${idx * 50}ms` }}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl"
             >
               {/* Product Image */}
               <div className="relative aspect-[4/3] min-h-[190px] overflow-hidden bg-stone-200 sm:min-h-0">

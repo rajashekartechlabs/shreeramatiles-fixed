@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 const galleryImages = [
   { id: 1, title: 'Modern Office Complex', category: 'Commercial' },
@@ -15,29 +15,10 @@ const galleryImages = [
 ]
 
 export function Gallery() {
-  const [isVisible, setIsVisible] = useState(false)
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-stone-50" ref={ref}>
+    <section id="gallery" className="py-20 md:py-28 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
@@ -56,10 +37,9 @@ export function Gallery() {
           {galleryImages.map((img, idx) => (
             <div
               key={img.id}
-              className={`group relative bg-gradient-to-br from-terracotta/20 to-stone-300 rounded-xl overflow-hidden cursor-pointer transition-all duration-500 ${
+              className={`group relative bg-gradient-to-br from-terracotta/20 to-stone-300 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ${
                 idx % 5 === 0 ? 'lg:col-span-2 lg:row-span-2 h-96' : 'h-64'
-              } ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              style={{ transitionDelay: `${idx * 60}ms` }}
+              }`}
               onClick={() => setSelectedImage(img.id)}
             >
               {/* Image Placeholder */}
