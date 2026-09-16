@@ -11,7 +11,7 @@ export function About() {
           <div className="h-96 rounded-2xl overflow-hidden shadow-xl relative">
             <Image
               src="/images/manufacturing-facility.webp"
-              alt="Keen Method manufacturing facility with modern equipment"
+              alt="Shree Rama Tiles and Pavers concrete manufacturing facility in Bengaluru"
               fill
               className="object-cover"
             />
@@ -21,7 +21,7 @@ export function About() {
           <div className="transition-all duration-300">
             <div className="mb-6">
               <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
-                About Keen Method
+                About Shree Rama Tiles
               </span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-charcoal mt-3 mb-6">
                 Committed to Excellence in Every Pour
