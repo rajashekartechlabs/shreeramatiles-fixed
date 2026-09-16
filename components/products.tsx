@@ -1,106 +1,48 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-
-const products = [
-  {
-    id: 1,
-    name: 'Drainage Slab',
-    price: '₹80 / Sq.ft',
-    description: 'Heavy-duty drainage slabs for residential and commercial drainage systems.',
-    image: '/images/drainage-slabs.webp',
-    imageClassName: 'object-contain p-3',
-  },
-  {
-    id: 2,
-    name: 'Readymade Compound Wall',
-    price: '₹90 / Sq.ft',
-    description: 'Strong precast compound wall panels with quick installation.',
-    image: '/images/compound-walls.webp',
-    imageClassName: 'object-cover object-center',
-  },
-  {
-    id: 3,
-    name: 'Parking Tile',
-    price: '₹30 / Sq.ft',
-    description: 'Durable concrete parking tiles.',
-    image: '/images/parking-tiles.webp',
-    imageClassName: 'object-cover object-center',
-  },
-  {
-    id: 4,
-    name: 'I Shape Paver (60 mm)',
-    price: '₹40 / Sq.ft',
-    description: 'Premium I-shaped concrete paver tiles for modern designs.',
-    image: '/images/i-shape-paver.webp',
-  },
-  {
-    id: 5,
-    name: 'Zig Zag Paver (60 mm)',
-    price: '₹40 / Sq.ft',
-    description: 'Decorative zig zag paver tiles for attractive patterns.',
-    image: '/images/zigzag-paver.webp',
-  },
-  {
-    id: 6,
-    name: 'Zig Zag Paver (80 mm)',
-    price: '₹50 / Sq.ft',
-    description: 'Heavy-duty zig zag paver tiles with enhanced thickness.',
-    image: '/images/zigzag-paver-80.webp',
-  },
-  {
-    id: 7,
-    name: 'Square Paver (8×8, 60 mm)',
-    price: '₹45 / Sq.ft',
-    description: 'Classic square paver tiles for versatile applications.',
-    image: '/images/square-paver.webp',
-  },
-  {
-    id: 8,
-    name: 'Rectangle Paver (4×8, 60 mm)',
-    price: '₹48 / Sq.ft',
-    description: 'Rectangular paver tiles for linear designs and driveways.',
-    image: '/images/rectangle-paver.webp',
-  },
-  {
-    id: 9,
-    name: 'Grass Paver (60 mm)',
-    price: '₹60 / Sq.ft',
-    description: 'Eco-friendly grass paver tiles for green parking and landscaping.',
-    image: '/images/grass-paver-60.webp',
-  },
-  {
-    id: 10,
-    name: 'Grass Paver (80 mm)',
-    price: '₹70 / Sq.ft',
-    description: 'Heavy-duty grass paver tiles for high-traffic areas.',
-    image: '/images/grass-paver-80.webp',
-  },
-  {
-    id: 11,
-    name: 'Cover Block',
-    price: '₹140 / 100 Pieces',
-    description: 'Protective cover blocks for various construction applications.',
-    image: '/images/cover-blocks.webp',
-  },
-  {
-    id: 12,
-    name: 'Curb',
-    price: '₹170 / Piece',
-    description: 'Precast concrete curb elements for landscaping and boundaries.',
-    image: '/images/curbs.webp',
-  },
-  {
-    id: 13,
-    name: 'Curb Saucer Drain',
-    price: '₹170 / Piece',
-    description: 'Integrated curb and drainage solution for efficient water management.',
-    image: '/images/curb-drain.webp',
-  },
-]
+import { FALLBACK_PRODUCTS, Product } from '@/lib/products-data'
 
 export function Products() {
-  const handleWhatsApp = (productName) => {
+  const [productsList, setProductsList] = useState<Product[]>(FALLBACK_PRODUCTS)
+  const [dataSource, setDataSource] = useState<'static' | 'google-sheets'>('static')
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    let isMounted = true
+
+    async function loadProducts() {
+      try {
+        setIsLoading(true)
+        const res = await fetch('/api/products')
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`)
+        const data = await res.json()
+
+        if (isMounted && data?.products && Array.isArray(data.products) && data.products.length > 0) {
+          setProductsList(data.products)
+          if (data.source === 'google-sheets') {
+            setDataSource('google-sheets')
+          }
+        }
+      } catch (err) {
+        // In case of error, FALLBACK_PRODUCTS remain active smoothly
+        console.warn('Could not load products from /api/products, using static fallback catalog:', err)
+      } finally {
+        if (isMounted) {
+          setIsLoading(false)
+        }
+      }
+    }
+
+    loadProducts()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  const handleWhatsApp = (productName: string) => {
     const message = `Hello, I am interested in the ${productName}. Please share your best price.`
     const encodedMessage = encodeURIComponent(message)
     window.open(`https://wa.me/919035501568?text=${encodedMessage}`, '_blank')
@@ -110,20 +52,27 @@ export function Products() {
     <section id="products" className="bg-stone-50 py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         <div className="mb-14 max-w-3xl">
-          <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
-            Our Products
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-terracotta font-semibold text-sm tracking-wide uppercase">
+              Our Products
+            </span>
+            {dataSource === 'google-sheets' && (
+              <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+                Live from Google Sheets
+              </span>
+            )}
+          </div>
           <h2 className="mt-3 mb-4 max-w-2xl text-4xl font-heading font-bold tracking-tight text-charcoal md:text-6xl">
             Premium Concrete Pavers & Precast Products
           </h2>
           <p className="max-w-2xl text-lg leading-7 text-stone-600">
-            High-quality concrete products manufactured for residential, commercial and industrial projects.
+            High-quality concrete products manufactured for residential, commercial and industrial projects in Bengaluru.
           </p>
         </div>
 
         {/* Products Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
+          {productsList.map((product) => (
             <div
               key={product.id}
               className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl"
@@ -131,19 +80,24 @@ export function Products() {
               {/* Product Image */}
               <div className="relative aspect-[4/3] min-h-[190px] overflow-hidden bg-stone-200 sm:min-h-0">
                 <Image
-                  src={product.image}
-                  alt={product.name}
+                  src={product.image || '/images/hero-desktop.webp'}
+                  alt={`${product.name} manufactured by Shree Rama Tiles and Pavers Bengaluru`}
                   fill
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                   className={`${product.imageClassName ?? 'object-cover object-center'} transition-transform duration-700 group-hover:scale-105`}
                 />
+                {product.category && (
+                  <span className="absolute top-3 right-3 z-10 rounded-full bg-charcoal/75 backdrop-blur-sm px-3 py-1 text-xs font-medium text-stone-100">
+                    {product.category}
+                  </span>
+                )}
               </div>
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-charcoal mb-2">{product.name}</h3>
                 <p className="text-stone-600 text-sm mb-4 flex-grow">{product.description}</p>
-                
+
                 {/* Price */}
                 <div className="mb-6 pt-4 border-t border-stone-200">
                   <span className="text-2xl font-bold text-terracotta">{product.price}</span>
