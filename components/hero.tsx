@@ -23,14 +23,14 @@ export function Hero() {
           sizes="100vw"
           className="object-cover object-center md:hidden"
         />
-        {/* Desktop hero — shown only at md and above */}
-        <Image
-          src="/images/hero-desktop.webp"
+        {/* Desktop hero — plain img bypasses Next.js image cache; already a pre-optimised WebP */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/hero-desktop.webp?v=2"
           alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
-          fill
-          priority
-          sizes="100vw"
-          className="hidden object-cover object-center md:block"
+          className="hidden h-full w-full object-cover object-center md:block"
+          fetchPriority="high"
+          decoding="async"
         />
       </div>
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
