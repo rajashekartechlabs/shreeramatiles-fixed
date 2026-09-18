@@ -134,4 +134,31 @@ export const FALLBACK_PRODUCTS: Product[] = [
     image: '/images/hexagonal-paver.webp',
     category: 'Pavers',
   },
+  {
+    id: 16,
+    name: 'Square Tile',
+    price: '',
+    description: 'Classic plain square design paver tiles, available in grey and red.',
+    image: '/images/square-tile.webp',
+    category: 'Pavers',
+  },
+  {
+    id: 17,
+    name: 'Designer Tile',
+    price: '',
+    description: 'Decorative floral pattern paver tiles, available in grey and red.',
+    image: '/images/designer-tile.webp',
+    category: 'Pavers',
+  },
+  {
+    id: 18,
+    name: 'Checker Tile',
+    price: '',
+    description: 'Textured checker-pattern paver tiles, available in grey and red.',
+    // TODO: The image angle for this product is a wide plaza shot, which is inconsistent 
+    // with the close diagonal walkway angle of Square Tile and Designer Tile. 
+    // Regenerate this image to match the tight framing once the image generation quota resets.
+    image: '/images/checker-tile.webp',
+    category: 'Pavers',
+  },
 ]
