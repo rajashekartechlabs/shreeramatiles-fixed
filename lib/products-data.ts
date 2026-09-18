@@ -28,15 +28,6 @@ export const FALLBACK_PRODUCTS: Product[] = [
     imageClassName: 'object-cover object-center',
   },
   {
-    id: 3,
-    name: 'Parking Tile',
-    price: '₹30 / Sq.ft',
-    description: 'Durable concrete parking tiles.',
-    image: '/images/parking-tiles.webp',
-    category: 'Tiles',
-    imageClassName: 'object-cover object-center',
-  },
-  {
     id: 4,
     name: 'I Shape Paver (60 mm)',
     price: '₹40 / Sq.ft',
@@ -128,8 +119,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: 15,
     name: 'Hexagonal Paver',
-    // Price not yet decided — leave blank; do not display a placeholder number.
-    price: '',
+    price: '₹45 / Sq.ft',
     description: 'Classic hexagonal concrete paver tiles available in multiple colours for decorative paving.',
     image: '/images/hexagonal-paver.webp',
     category: 'Pavers',
@@ -137,7 +127,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: 16,
     name: 'Square Tile',
-    price: '',
+    price: '₹35 / Sq.ft',
     description: 'Classic plain square design paver tiles, available in grey and red.',
     image: '/images/square-tile.webp',
     category: 'Pavers',
@@ -145,7 +135,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: 17,
     name: 'Designer Tile',
-    price: '',
+    price: '₹35 / Sq.ft',
     description: 'Decorative floral pattern paver tiles, available in grey and red.',
     image: '/images/designer-tile.webp',
     category: 'Pavers',
@@ -153,7 +143,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: 18,
     name: 'Checker Tile',
-    price: '',
+    price: '₹35 / Sq.ft',
     description: 'Textured checker-pattern paver tiles, available in grey and red.',
     // TODO: The image angle for this product is a wide plaza shot, which is inconsistent 
     // with the close diagonal walkway angle of Square Tile and Designer Tile. 
