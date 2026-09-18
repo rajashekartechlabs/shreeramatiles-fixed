@@ -74,46 +74,29 @@ export function Products() {
             Hover states are pure CSS (Tailwind transitions) — no JS/IntersectionObserver.
             Each card: hover:-translate-y-1 hover:shadow-xl hover:border-terracotta/40
             Image: group-hover:scale-105 (700ms ease for a smooth pan feel).
-            TODO (Task 5): This is a temporary hardcoded choice — the client should decide
-            which product is "featured" (shown wider with "Most Popular" badge).
-            Plan: add a "featured" column to the Google Sheet once that integration is
-            finalised, then replace the hardcoded name check below with product.featured === true.
+            Note: A "featured product" treatment was tried and reverted. If revisited,
+            it should be driven by an explicit `product.featured` flag from Google Sheets,
+            not hardcoded here.
         */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {productsList.map((product) => {
-            // Named match instead of array-position — doesn't break if product order changes.
-            // Temporary: developer should NOT be the one deciding what's "most popular".
-            const isFeatured = product.name === 'I Shape Paver (60 mm)'
             return (
               <div
                 key={product.id}
-                className={[
-                  'group flex flex-col overflow-hidden rounded-2xl border border-stone-200 shadow-sm',
-                  'transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl',
-                  isFeatured
-                    ? 'bg-stone-100 lg:col-span-2'
-                    : 'bg-white',
-                ].join(' ')}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-xl"
               >
                 {/* Product Image */}
-                <div className={`relative overflow-hidden bg-stone-200 ${isFeatured ? 'aspect-[16/7]' : 'aspect-[4/3] min-h-[190px] sm:min-h-0'}`}>
+                <div className="relative aspect-[4/3] min-h-[190px] overflow-hidden bg-stone-200 sm:min-h-0">
                   <Image
                     src={product.image || '/images/hero-desktop.webp'}
                     alt={`${product.name} manufactured by Shree Rama Tiles and Pavers Bengaluru`}
                     fill
-                    sizes={isFeatured
-                      ? '(max-width: 1279px) 100vw, 66vw'
-                      : '(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw'}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                     className={`${product.imageClassName ?? 'object-cover object-center'} transition-transform duration-700 group-hover:scale-105`}
                   />
                   {product.category && (
                     <span className="absolute top-3 right-3 z-10 rounded-full bg-charcoal/75 backdrop-blur-sm px-3 py-1 text-xs font-medium text-stone-100">
                       {product.category}
-                    </span>
-                  )}
-                  {isFeatured && (
-                    <span className="absolute top-3 left-3 z-10 rounded-full bg-terracotta px-3 py-1 text-xs font-semibold text-white shadow">
-                      Most Popular
                     </span>
                   )}
                 </div>
