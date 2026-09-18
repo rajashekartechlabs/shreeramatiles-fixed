@@ -132,14 +132,14 @@ export function Contact() {
         {/* Contact Form */}
         <div className="mx-auto max-w-4xl rounded-2xl border border-stone-200 bg-stone-50 p-6 md:p-10">
           <h3 className="text-2xl font-semibold text-charcoal mb-2 text-center">Send us an Enquiry</h3>
-          <p className="text-sm text-stone-600 mb-6 text-center">Fill out the form below and we will get back to you promptly with product details and quotes.</p>
+          <p className="text-sm text-stone-600 mb-6 text-center">Fill out the form below and we will get back to you within 1 business day with product details and quotes.</p>
 
           {status === 'success' ? (
             <div className="flex flex-col items-center justify-center py-12 text-center">
               <CheckCircle2 className="h-16 w-16 text-emerald-600 mb-4" />
               <h4 className="text-2xl font-heading font-bold text-charcoal mb-2">Thank You!</h4>
               <p className="text-stone-600 max-w-md mb-6">
-                Your enquiry has been received. Our team will review your requirements and get in touch with you shortly.
+                Your enquiry has been received. Our team will review your requirements and get back to you within 1 business day.
               </p>
               <button
                 type="button"

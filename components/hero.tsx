@@ -1,12 +1,20 @@
 'use client'
 
 import Image from 'next/image'
+import { Factory, ShieldCheck, Truck, Leaf } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const highlights = [
-  { mark: '▦', label: 'Direct', detail: 'Manufacturing' },
-  { mark: '◇', label: 'Consistent', detail: 'Quality' },
-  { mark: '▱', label: 'On-Time', detail: 'Supply' },
-  { mark: '⌁', label: 'Sustainable', detail: '& Durable' },
+interface Highlight {
+  Icon: LucideIcon
+  label: string
+  detail: string
+}
+
+const highlights: Highlight[] = [
+  { Icon: Factory,      label: 'Direct',      detail: 'Manufacturing' },
+  { Icon: ShieldCheck,  label: 'Consistent',  detail: 'Quality' },
+  { Icon: Truck,        label: 'On-Time',     detail: 'Supply' },
+  { Icon: Leaf,         label: 'Sustainable', detail: '& Durable' },
 ]
 
 export function Hero() {
@@ -58,7 +66,11 @@ export function Hero() {
           <div className="mt-10 grid max-w-xl grid-cols-2 gap-x-5 gap-y-6 sm:mt-12 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-0">
             {highlights.map((item, index) => (
               <div key={item.label} className={`flex items-start gap-3 sm:border-stone-500/60 sm:pl-4 ${index > 0 ? 'sm:border-l' : ''}`}>
-                <span aria-hidden="true" className="pt-0.5 text-2xl text-terracotta-light">{item.mark}</span>
+                <item.Icon
+                  aria-hidden="true"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-terracotta-light"
+                  strokeWidth={1.75}
+                />
                 <span className="text-sm leading-5 text-stone-200"><strong className="block font-medium text-white">{item.label}</strong>{item.detail}</span>
               </div>
             ))}
