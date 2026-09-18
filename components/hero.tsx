@@ -12,7 +12,8 @@ const highlights = [
 export function Hero() {
   return (
     <section className="relative isolate min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-[100svh] md:pt-20">
-      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
+      {/* Light gradient only on the left half for text readability — no heavy dark overlay */}
+      <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(19,20,21,0.72)_0%,rgba(19,20,21,0.55)_35%,rgba(19,20,21,0.15)_60%,transparent_80%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.78)_0%,rgba(19,20,21,0.60)_38%,rgba(19,20,21,0.10)_62%,transparent_82%)]" />
       <div className="absolute inset-0 z-0 h-full w-full">
         {/* Mobile hero — shown only below md breakpoint */}
         <Image
@@ -33,8 +34,7 @@ export function Hero() {
           decoding="async"
         />
       </div>
-      <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
-      <div className="absolute inset-x-0 bottom-0 z-10 h-44 bg-charcoal-dark/70 blur-2xl md:hidden" aria-hidden="true" />
+
 
       <div className="relative z-20 flex min-h-[620px] w-full items-center px-5 py-10 sm:px-8 sm:py-16 lg:px-16 xl:px-24">
         <div className="w-full max-w-2xl md:w-[50%] md:pr-10 lg:pr-16">
