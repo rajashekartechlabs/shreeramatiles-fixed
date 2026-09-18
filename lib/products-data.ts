@@ -116,4 +116,22 @@ export const FALLBACK_PRODUCTS: Product[] = [
     image: '/images/curb-drain.webp',
     category: 'Curbs & Drains',
   },
+  {
+    id: 14,
+    name: 'Double Way Paver',
+    // Price not yet decided — leave blank; do not display a placeholder number.
+    price: '',
+    description: 'Interlocking double-way concrete paver tiles for driveways and pathways.',
+    image: '/images/double-way-paver.webp',
+    category: 'Pavers',
+  },
+  {
+    id: 15,
+    name: 'Hexagonal Paver',
+    // Price not yet decided — leave blank; do not display a placeholder number.
+    price: '',
+    description: 'Classic hexagonal concrete paver tiles available in multiple colours for decorative paving.',
+    image: '/images/hexagonal-paver.webp',
+    category: 'Pavers',
+  },
 ]

@@ -74,14 +74,16 @@ export function Products() {
             Hover states are pure CSS (Tailwind transitions) — no JS/IntersectionObserver.
             Each card: hover:-translate-y-1 hover:shadow-xl hover:border-terracotta/40
             Image: group-hover:scale-105 (700ms ease for a smooth pan feel).
-            TODO (Task 5): When the Google Sheets API supports a `featured` column,
-            replace the index===0 check below with product.featured === true.
+            TODO (Task 5): This is a temporary hardcoded choice — the client should decide
+            which product is "featured" (shown wider with "Most Popular" badge).
+            Plan: add a "featured" column to the Google Sheet once that integration is
+            finalised, then replace the hardcoded name check below with product.featured === true.
         */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {productsList.map((product, index) => {
-            // Conservative featured treatment: first card only gets lg:col-span-2
-            // and a warm bg tint to break grid monotony without altering the data model.
-            const isFeatured = index === 0
+          {productsList.map((product) => {
+            // Named match instead of array-position — doesn't break if product order changes.
+            // Temporary: developer should NOT be the one deciding what's "most popular".
+            const isFeatured = product.name === 'I Shape Paver (60 mm)'
             return (
               <div
                 key={product.id}
@@ -121,9 +123,12 @@ export function Products() {
                   <h3 className="text-xl font-semibold text-charcoal mb-2">{product.name}</h3>
                   <p className="text-stone-600 text-sm mb-4 flex-grow">{product.description}</p>
 
-                  {/* Price */}
+                  {/* Price — empty string means pricing not yet set; show neutral fallback */}
                   <div className="mb-6 pt-4 border-t border-stone-200">
-                    <span className="text-2xl font-bold text-terracotta">{product.price}</span>
+                    {product.price
+                      ? <span className="text-2xl font-bold text-terracotta">{product.price}</span>
+                      : <span className="text-sm text-stone-400 italic">Price on request</span>
+                    }
                   </div>
 
                   {/* CTA Button — "Request Quote" replaces "GET BEST PRICE" (Task 1).
