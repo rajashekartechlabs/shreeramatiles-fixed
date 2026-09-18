@@ -14,17 +14,24 @@ export function Hero() {
     <section className="relative isolate min-h-[700px] overflow-hidden bg-charcoal-dark pt-24 text-white md:min-h-[100svh] md:pt-20">
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(19,20,21,0.88)_0%,rgba(19,20,21,0.68)_48%,rgba(19,20,21,0.32)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.99)_0%,rgba(19,20,21,0.98)_40%,rgba(19,20,21,0.45)_72%,rgba(19,20,21,0.18)_100%)]" />
       <div className="absolute inset-0 z-0 h-full w-full">
-        <picture className="block h-full w-full">
-          <source media="(max-width: 767px)" srcSet="/images/hero-mobile.webp" type="image/webp" />
-          <Image
-            src="/images/hero-desktop.webp"
-            alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </picture>
+        {/* Mobile hero — shown only below md breakpoint */}
+        <Image
+          src="/images/hero-mobile.webp"
+          alt="Concrete pavers manufactured by Shree Rama Tiles and Pavers Bengaluru"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center md:hidden"
+        />
+        {/* Desktop hero — shown only at md and above */}
+        <Image
+          src="/images/hero-desktop.webp"
+          alt="Concrete pavers and precast drainage products displayed in a manufacturing yard"
+          fill
+          priority
+          sizes="100vw"
+          className="hidden object-cover object-center md:block"
+        />
       </div>
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(23,21,19,0.16)_0%,rgba(23,21,19,0.18)_42%,rgba(19,20,21,0.94)_78%,rgba(19,20,21,1)_100%)] md:bg-[linear-gradient(90deg,rgba(19,20,21,0.22)_0%,rgba(19,20,21,0.1)_40%,transparent_68%)]" />
       <div className="absolute inset-x-0 bottom-0 z-10 h-44 bg-charcoal-dark/70 blur-2xl md:hidden" aria-hidden="true" />
